@@ -142,9 +142,11 @@ button {
 }
 
 #histories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  justify-content: center;
 }
 
 .card {
@@ -175,18 +177,31 @@ button {
     rgba(255, 255, 255, 0.05) 99.85%
   );
   backdrop-filter: blur(5px);
-  margin: auto;
-  width: 50%;
-  padding: 10px;
+
   /* height: 100vh; */
   /* width: 100%; */
   /* position: fixed;
  margin-top: 200px;
- margin-left: 400px;
- margin-right: 200px; */
+ margin-left: 400px; */
+ margin-right: 200px;
 }
 
 @media only screen and (max-width: 700px) {
+  .box-container {
+    padding: 0 20px;
+    width: 100%;
+  }
+  .card {
+    flex-direction:column;
+  }
+  #histories{
+    display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;  
+   justify-content: space-around;
+  }
+}
+@media only screen and (min-width:701px) {
   .box-container {
     padding: 0 20px;
     width: 100%;
