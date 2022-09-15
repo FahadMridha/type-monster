@@ -98,7 +98,7 @@ const gameOver = () => {
 const closeModal = () => {
   modalBackground.classList.toggle("hidden");
   resultModal.classList.toggle("hidden");
-  location.reload();
+
 };
 
 const start = () => {
@@ -113,14 +113,13 @@ const start = () => {
 
 
     // finished timer
-    if (count === -1) {
+    if (count === 0) {
       // -------------- START TYPING -----------------
       document.addEventListener("keydown", typeController);
       countdownOverlay.style.display = "none";
       display.classList.remove("inactive");
-
       clearInterval(startCountdown);
-      startTime = Math.floor(new Date().getTime());
+      startTime = new Date().getTime();
     }
     count--;
   }, 1000);
